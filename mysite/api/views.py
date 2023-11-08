@@ -10,7 +10,7 @@ def getApiOverview(request):
         'List BusinessDays': 'getBusinessDaysRange/<str:start_date>/<str:end_date>/',
         'Detail Order': 'getOrders/<str:date>/',
         'List Orders': 'getOrdersRange/<str:start_date>/<str:end_date>/',
-        'Create BusinessDay': 'addBusinessDay/',
+        'Create BusinessDay': 'addBusinessDay/<str:date>/',
         'Create Order': 'addOrder/<str:date>/',
         'Update BusinessDay': 'updateBusinessDay/<str:date>/',
         'Update Order': 'updateOrder/<str:date>/<str:order_id>/',
@@ -44,14 +44,14 @@ def getOrdersRange(request, start_date, end_date):
     return Response(serializer.data)
 
 @api_view(['POST'])
-def addBusinessDay(request):
+def addBusinessDay(request, date):                          # Fix
     serializer = BusinessDaySerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
     return Response(serializer.data)
 
 @api_view(['POST'])
-def addOrder(request, date):
+def addOrder(request, date):                                # Fix
     serializer = OrderSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
@@ -66,7 +66,7 @@ def updateBusinessDay(request, date):
     return Response(serializer.data)
 
 @api_view(['PUT'])
-def updateOrder(request, date, order_id):
+def updateOrder(request, date, order_id):                   # Fix
     order = Order.objects.get(date=date, order_id=order_id)
     serializer = OrderSerializer(instance=order, data=request.data)
     if serializer.is_valid():
@@ -80,7 +80,7 @@ def deleteBusinessDay(request, date):
     return Response('BusinessDay successfully deleted!')
 
 @api_view(['DELETE'])
-def deleteOrder(request, date, order_id):
+def deleteOrder(request, date, order_id):                   # Fix
     order = Order.objects.get(date=date, order_id=order_id)
     order.delete()
     return Response('Order successfully deleted!')
