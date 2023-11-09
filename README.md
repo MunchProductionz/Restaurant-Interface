@@ -50,6 +50,14 @@ Divide the application into 3 pages, each covering its own functional requiremen
 Frontend: TypeScript/React using yarn.
 Backend: Django REST framework.
 
+### Assumptions
+The following assumptions were made when solving the case:
+- All necessary data objects exist in the database.
+- Business hours can only be full hours.
+- Only 3 types of items.
+- You only need to see 4 weeks back in “Statistics”.
+- All days are considered “open” on the page “Statistics”.
+
 ### Sketches
 The following are sketches made during the case.
 
