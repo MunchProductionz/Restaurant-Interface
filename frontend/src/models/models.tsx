@@ -16,3 +16,14 @@ export interface IOrderStatusDropdown {
     currentStatus: string;
     onStatusChange: (orderId: number, newStatus: string) => void;
 }
+
+export interface IBusinessDay {
+    date: string;
+    week: number;
+    dayOfTheWeek: string;
+    openingHour: string;
+    closingHour: string;
+    numberOfHourse: number;
+    orders: IOrder[];
+    numberOfOrders: number;
+}
