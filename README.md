@@ -10,7 +10,7 @@ From the root directory:
 3. Use "Inspect" -> "Console" in your browser to se responses from pressing the "Apply" button.
 
 #### Screenshot - Orders
-![Orders](assets/Orders.png)
+![Orders](assets/Orders.PNG)
 
 
 ### Backend
@@ -31,7 +31,7 @@ The api endpoints are not functional, so there will appear a bunch of error mess
 To understand the application use cases, look in the `frontend -> src -> services` directory to see all the frontend API calls.
 
 #### Screenshot - API Overview
-![DjangoAPIOverview](assets/Django - API Overview.png)
+![DjangoAPIOverview](assets/DjangoAPIOverview.PNG)
 
 
 ---
@@ -57,10 +57,10 @@ The following are sketches made during the case.
 ![Entities](assets/Entities.png)
 
 #### Hours
-![Hours](assets/Business Hours Management - Front End Sketch.png)
+![Hours](assets/BusinessHoursManagementSketch.png)
 
 #### Orders
-![Orders](assets/Order Management - Front End Sketch.png)
+![Orders](assets/OrderManagementSketch.png)
 
 #### Statistics
-![Statistics](assets/Statistics - Front End Sketch.png)
+![Statistics](assets/StatisticsSketch.png)
