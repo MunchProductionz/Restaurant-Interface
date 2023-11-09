@@ -23,7 +23,7 @@ export interface IBusinessDay {
     dayOfTheWeek: string;
     openingHour: string;
     closingHour: string;
-    numberOfHourse: number;
+    numberOfHours: number;
     orders: IOrder[];
     numberOfOrders: number;
 }
