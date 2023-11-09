@@ -16,7 +16,7 @@ class Item(models.Model):
     
 class Order(models.Model):
     order_id = models.AutoField(primary_key=True)
-    date = models.DateField(auto_now_add=True)          
+    date = models.DateTimeField(auto_now_add=True)          
     customer_name = models.CharField(max_length=100)
     items = models.ManyToManyField('Item', related_name='orders')
     order_price = models.DecimalField(max_digits=10, decimal_places=2)
@@ -32,7 +32,7 @@ class Order(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     
 class BusinessDay(models.Model):
-    date = models.DateField(primary_key=True)
+    date = models.DateTimeField(primary_key=True)
     week = models.IntegerField()
     day_of_the_week = models.CharField(max_length=9)
     opening_hour = models.TimeField()
