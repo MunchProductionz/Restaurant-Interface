@@ -50,7 +50,7 @@ Divide the application into 3 pages, each covering its own functional requiremen
 Frontend: TypeScript/React using yarn.
 Backend: Django REST framework.
 
-### Sketch
+### Sketches
 The following are sketches made during the case.
 
 #### Entities
