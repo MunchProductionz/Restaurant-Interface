@@ -49,7 +49,7 @@ def getOrdersRange(request, start_date, end_date):
     
 
 @api_view(['POST'])
-def addBusinessDay(request, date):                          # Fix
+def addBusinessDay(request, date):                          #TODO: Fix
     business_day = BusinessDay(date=date)
     serializer = BusinessDaySerializer(business_day, data=request.data)
     if serializer.is_valid():
@@ -57,7 +57,7 @@ def addBusinessDay(request, date):                          # Fix
     return Response(serializer.data)
 
 @api_view(['POST'])
-def addOrder(request, date):                                # Fix
+def addOrder(request, date):                                #TODO: Fix
     order = Order(date=date)
     business_day = BusinessDay.objects.get(date=date)
     serializer = BusinessDaySerializer(instance=business_day, data=request.data)
@@ -74,7 +74,7 @@ def updateBusinessDay(request, date):
     return Response(serializer.data)
 
 @api_view(['PUT'])
-def updateOrder(request, date, order_id):                   # Fix
+def updateOrder(request, date, order_id):                   #TODO: Fix
     business_day = BusinessDay.objects.get(date=date)
     orders = business_day.orders.all()
     order = orders.get(order_id=order_id)
@@ -90,7 +90,7 @@ def deleteBusinessDay(request, date):
     return Response('BusinessDay successfully deleted!')
 
 @api_view(['DELETE'])
-def deleteOrder(request, date, order_id):                   # Fix
+def deleteOrder(request, date, order_id):                   #TODO: Fix
     business_day = BusinessDay.objects.get(date=date)
     orders = business_day.orders.all()
     order = orders.get(order_id=order_id)
